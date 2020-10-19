@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import colors from "../constants/colors";
 import Status from "./Status";
+import ConnectedBlocks from "../containers/Blocks";
 
 const Node = ({ node, expanded, toggleNodeExpanded }) => {
   const classes = useStyles();
@@ -46,7 +47,7 @@ const Node = ({ node, expanded, toggleNodeExpanded }) => {
         </Box>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        <Typography>Blocks go here</Typography>
+        {expanded ? <ConnectedBlocks url={node.url} /> : null}
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );
